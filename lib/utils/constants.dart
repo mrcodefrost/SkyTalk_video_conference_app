@@ -11,3 +11,7 @@ Color kSecondary = const Color(0xffE29578);
 Color kTertiary = const Color(0xffFFDDD2);
 Color kWhite = const Color(0xffEDF6F9);
 Color kBlack = const Color(0xff006D77);
+
+// Images
+
+String onboardingImage = 'assets/images/onboarding.jpg';

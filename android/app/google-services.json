@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1015826246021",
+    "project_id": "skytalk-4ec55",
+    "storage_bucket": "skytalk-4ec55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015826246021:android:b15cbbad262e5933c23cec",
+        "android_client_info": {
+          "package_name": "frost.portfolio.video_conference_skytalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015826246021-m8kq0s29nf607bigp9i3sh024og5bfi1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "frost.portfolio.video_conference_skytalk",
+            "certificate_hash": "fc9dbf4d5a60f608158b6a084907ecd51438508b"
+          }
+        },
+        {
+          "client_id": "1015826246021-s2i482l2058s2kvf5jiso5aljjk7khve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxgGTyw0kUxVyB-GOQ2KhdE_WHgAkPg3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015826246021-s2i482l2058s2kvf5jiso5aljjk7khve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
