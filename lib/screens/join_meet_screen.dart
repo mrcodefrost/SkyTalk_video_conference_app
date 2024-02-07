@@ -4,6 +4,8 @@ import 'package:video_conference_skytalk/resources/jitsi_meet_methods.dart';
 import 'package:video_conference_skytalk/utils/constants.dart';
 import 'package:video_conference_skytalk/widgets/join_meet_options_button.dart';
 
+import '../widgets/custom_button.dart';
+
 class JoinMeetScreen extends StatefulWidget {
   const JoinMeetScreen({super.key});
 
@@ -42,12 +44,12 @@ class _JoinMeetScreenState extends State<JoinMeetScreen> {
     super.initState();
   }
 
-  // @override
-  // void dispose() {
-  //   roomIdController.dispose();
-  //   nameController.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    roomIdController.dispose();
+    nameController.dispose();
+    super.dispose();
+  }
 
   _joinMeeting() {
     _jitsiMeetMethods.createNewMeet(
@@ -63,68 +65,50 @@ class _JoinMeetScreenState extends State<JoinMeetScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: kTertiary,
-        // leading: IconButton(icon: Icon(Icons.arrow_back),
-        //     onPressed: null
-
-        //     () {
-        //   Future.delayed(Duration.zero, () {
-        //     Navigator.of(context).pop();
-        //   });
-        // },
-        // ),
+        backgroundColor: kSecondary,
         title: const Text('Join a meeting'),
         titleTextStyle: TextStyle(
-          fontSize: 20,
+          fontSize: 25,
           color: kBlack,
+          letterSpacing: 2,
         ),
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
+        physics: const NeverScrollableScrollPhysics(),
         children: [
-          SizedBox(
-            height: 80,
-            child: TextField(
-              controller: roomIdController,
-              maxLines: 1,
-              textAlign: TextAlign.center,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  fillColor: kTertiary,
-                  filled: true,
-                  border: InputBorder.none,
-                  hintText: 'Room ID'),
-            ),
-          ),
-          SizedBox(
-            height: 80,
-            child: TextField(
-              controller: roomIdController,
-              maxLines: 1,
-              textAlign: TextAlign.center,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  fillColor: kTertiary,
-                  filled: true,
-                  border: InputBorder.none,
-                  hintText: 'Name'),
-            ),
-          ),
           const SizedBox(
             height: 20,
           ),
-          InkWell(
-            onTap: _joinMeeting,
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Text(
-                'Join SkyTalk',
-                style: TextStyle(
-                  color: kBlack,
-                  fontSize: 14,
-                ),
-              ),
-            ),
+          TextField(
+            controller: roomIdController,
+            maxLines: 1,
+            textAlign: TextAlign.center,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+                fillColor: kTertiary,
+                filled: true,
+                border: InputBorder.none,
+                hintText: 'Room ID'),
+          ),
+          Container(
+            color: kPrimary,
+            height: 5,
+            width: 10,
+          ),
+          TextField(
+            controller: roomIdController,
+            maxLines: 1,
+            textAlign: TextAlign.center,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+                fillColor: kTertiary,
+                filled: true,
+                border: InputBorder.none,
+                hintText: 'Name'),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           const SizedBox(
             height: 20,
@@ -139,21 +123,13 @@ class _JoinMeetScreenState extends State<JoinMeetScreen> {
             isMute: isVideoOff,
             onChange: videoState,
           ),
-          InkWell(
-            onTap: () {
-              _authMethods.signOutWithGoogle();
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Text(
-                'Sign Out',
-                style: TextStyle(
-                  color: kBlack,
-                  fontSize: 14,
-                ),
-              ),
-            ),
-          )
+          const SizedBox(
+            height: 50,
+          ),
+          CustomButton(
+            text: 'Join SkyTalk',
+            onPressed: _joinMeeting,
+          ),
         ],
       ),
     );

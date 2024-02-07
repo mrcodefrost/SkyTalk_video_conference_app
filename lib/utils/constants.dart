@@ -15,3 +15,4 @@ Color kBlack = const Color(0xff006D77);
 // Images
 
 String onboardingImage = 'assets/images/onboarding.jpg';
+String startScreenImage = 'assets/images/startscreengraphic.png';

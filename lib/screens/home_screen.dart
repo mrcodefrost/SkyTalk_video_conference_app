@@ -35,14 +35,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kTertiary,
-        elevation: 10,
+        backgroundColor: kWhite,
+        elevation: 0,
         title: const Text('SkyTalk'),
-        titleTextStyle: TextStyle(color: kBlack, fontSize: 25),
+        titleTextStyle:
+            TextStyle(color: kBlack, fontSize: 30, letterSpacing: 3),
         centerTitle: true,
       ),
       body: pages[_pageNumber],
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         backgroundColor: kTertiary,
         selectedItemColor: kBlack,
         unselectedItemColor: kSecondary,
@@ -52,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
               icon: Icon(Icons.comment_bank), label: 'Meet'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.lock_clock), label: 'Recent Meet'),
+              icon: Icon(Icons.lock_clock), label: 'Recent Meets'),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings_outlined), label: 'Settings'),
         ],

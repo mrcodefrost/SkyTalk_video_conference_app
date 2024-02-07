@@ -16,7 +16,7 @@ class JoinMeetOptionsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      color: kPrimary,
+      color: kBlack,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,12 +25,19 @@ class JoinMeetOptionsButton extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 20,
-                color: kSecondary,
+                fontSize: 24,
+                color: kWhite,
               ),
             ),
           ),
-          Switch(value: isMute, onChanged: onChange)
+          Switch(
+            value: isMute,
+            onChanged: onChange,
+            inactiveThumbColor: kSecondary,
+            inactiveTrackColor: kTertiary,
+            activeColor: kBlack,
+            activeTrackColor: kPrimary,
+          )
         ],
       ),
     );

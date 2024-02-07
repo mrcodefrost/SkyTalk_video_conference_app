@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SkyTalk - Video Conference App',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         useMaterial3: true,
         scaffoldBackgroundColor: kWhite,
       ),
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(
-                color: Colors.red,
+                color: Colors.black,
               ),
             );
           }

@@ -33,33 +33,6 @@ class StartMeetsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            MainMeetButton(
-              onPress: startNewMeet,
-              icon: Icons.video_call,
-              text: 'New Meeting',
-            ),
-            MainMeetButton(
-              onPress: () {
-                joinMeeting(context);
-              },
-              icon: Icons.add_box,
-              text: 'Join Meeting',
-            ),
-            // MainMeetButton(onPress: () {}, icon: Icons.calendar_month, text: 'Schedule Meeting',),
-            MainMeetButton(
-              onPress: () {
-                _authMethods.signOutWithGoogle();
-                // Navigator.pop(context);
-              },
-              icon: Icons.arrow_left,
-              text: 'Sign Out',
-            ),
-          ],
-        ),
         Expanded(
           child: Center(
             child: Text(
@@ -67,11 +40,41 @@ class StartMeetsScreen extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 color: kSecondary,
-                fontSize: 25,
+                fontSize: 30,
               ),
             ),
           ),
-        )
+        ),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MainMeetButton(
+                onPress: startNewMeet,
+                icon: Icons.video_call,
+                text: 'New Meeting',
+              ),
+              MainMeetButton(
+                onPress: () {
+                  joinMeeting(context);
+                },
+                icon: Icons.add_box,
+                text: 'Join Meeting',
+              ),
+              // MainMeetButton(onPress: () {}, icon: Icons.calendar_month, text: 'Schedule Meeting',),
+              MainMeetButton(
+                onPress: () {
+                  _authMethods.signOutWithGoogle();
+                  Navigator.pop(context);
+                },
+                icon: Icons.arrow_left,
+                text: 'Sign Out',
+              ),
+            ],
+          ),
+        ),
+        const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
       ],
     );
   }
