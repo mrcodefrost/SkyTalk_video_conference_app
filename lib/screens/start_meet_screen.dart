@@ -65,8 +65,7 @@ class StartMeetsScreen extends StatelessWidget {
               // MainMeetButton(onPress: () {}, icon: Icons.calendar_month, text: 'Schedule Meeting',),
               MainMeetButton(
                 onPress: () {
-                  _authMethods.signOutWithGoogle();
-                  Navigator.pop(context);
+                  _authMethods.signOutWithGoogle(context);
                 },
                 icon: Icons.arrow_left,
                 text: 'Sign Out',

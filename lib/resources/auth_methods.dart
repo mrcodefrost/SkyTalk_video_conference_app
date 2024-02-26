@@ -13,10 +13,11 @@ class AuthMethods {
 
   User get currentUser => _auth.currentUser!;
 
-  Future<void> signOutWithGoogle() async {
+  Future<void> signOutWithGoogle(BuildContext context) async {
     try {
-      _auth.signOut();
-      GoogleSignIn().disconnect();
+      await _auth.signOut();
+      await GoogleSignIn().disconnect();
+      Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
     } catch (e) {
       print(e);
     }

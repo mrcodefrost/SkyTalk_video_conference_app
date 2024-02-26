@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_conference_skytalk/resources/auth_methods.dart';
 import 'package:video_conference_skytalk/screens/recent_meets.dart';
+import 'package:video_conference_skytalk/screens/settings_screen.dart';
 import 'package:video_conference_skytalk/screens/start_meet_screen.dart';
 import 'package:video_conference_skytalk/utils/constants.dart';
 import 'package:video_conference_skytalk/widgets/custom_button.dart';
@@ -23,12 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     StartMeetsScreen(),
     const RecentMeetsScreen(),
-    CustomButton(
-      text: 'Sign Out',
-      onPressed: () {
-        AuthMethods().signOutWithGoogle();
-      },
-    )
+    SettingsScreen(),
   ];
 
   @override
