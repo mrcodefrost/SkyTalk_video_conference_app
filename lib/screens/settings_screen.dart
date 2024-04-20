@@ -10,6 +10,10 @@ class SettingsScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        CustomButton(text: 'Profile', onPressed: () {}),
+        CustomButton(text: 'Dark Mode', onPressed: () {}),
+        CustomButton(text: 'Settings', onPressed: () {}),
+        CustomButton(text: 'About', onPressed: () {}),
         CustomButton(
           text: 'Sign Out',
           onPressed: () {

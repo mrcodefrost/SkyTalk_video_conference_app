@@ -43,15 +43,13 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(vertical: 30),
             child: Image.asset(startScreenImage),
           ),
-          // CustomButton(
-          //   text: 'Login',
-          //   onPressed: () async {
-          //     bool result = await _authMethods.signInWithGoogle(context);
-          //     if (result) {
-          //       Navigator.pushReplacementNamed(context, '/home');
-          //     }
-          //   },
-          // ),
+          CustomButton(
+            text: 'Login with Email',
+            onPressed: () {},
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           const GoogleLoginButton(),
         ],
       ),
