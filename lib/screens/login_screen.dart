@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_conference_skytalk/resources/auth_methods.dart';
 import 'package:video_conference_skytalk/utils/constants.dart';
-import 'package:video_conference_skytalk/widgets/custom_button.dart';
 import 'package:video_conference_skytalk/widgets/google_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -43,10 +42,10 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(vertical: 30),
             child: Image.asset(startScreenImage),
           ),
-          CustomButton(
-            text: 'Login with Email',
-            onPressed: () {},
-          ),
+          // CustomButton(
+          //   text: 'Login with Email',
+          //   onPressed: () {},
+          // ),
           const SizedBox(
             height: 20,
           ),
